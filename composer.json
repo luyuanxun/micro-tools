@@ -1,0 +1,15 @@
+{
+  "name": "luyuanxun/micro-tools",
+  "description": "phalcon micro tool",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "firebase/php-jwt": "^5.0"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Luyuanxun\\Micro\\Tools\\": "src"
+    }
+  }
+}
