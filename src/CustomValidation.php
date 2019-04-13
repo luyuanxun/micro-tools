@@ -217,7 +217,7 @@ class CustomValidation
         foreach ($decryptFields as $field) {
             if (isset($params[$field]) && strlen($params[$field]) >= 24) {
                 try {
-                    $params[$field] = $validator->crypt->decryptBase64($params[$field]);
+                    $params[$field] = $validator->crypt->decryptBase64(urldecode($params[$field]));
                 } catch (Mismatch $e) {
                     throw new CustomException(Code::SERVER_ERROR, $e->getMessage());
                 }
