@@ -1,6 +1,6 @@
 <?php
 
-namespace Luyuanxun\Micro\Tools;
+namespace Lyx\Micro\Tools;
 
 use App\Common\Code;
 use Phalcon\Crypt\Mismatch;

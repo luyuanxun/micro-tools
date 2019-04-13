@@ -1,5 +1,5 @@
 {
-  "name": "luyuanxun/micro-tools",
+  "name": "lyx/micro-tools",
   "description": "phalcon micro tool",
   "type": "library",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Luyuanxun\\Micro\\Tools\\": "src"
+      "Lyx\\Micro\\Tools\\": "src"
     }
   }
 }
