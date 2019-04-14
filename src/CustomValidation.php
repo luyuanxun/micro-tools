@@ -81,9 +81,10 @@ class CustomValidation
 
                         break;
                     case 'date'://格式：date:Y-m-d H:i:s
+                        $format = $ruleVal ? $ruleVal : 'Y-m-d H:i:s';
                         $validator->add($field, new DateValidator([
-                            'format' => $ruleVal ? $ruleVal : 'Y-m-d H:i:s',
-                            'message' => $msg[$field . '.' . $rule] ?? ':field必须为字母',
+                            'format' => $format,
+                            'message' => $msg[$field . '.' . $rule] ?? ':field必须为时间格式' . $format,
                             'cancelOnFail' => true,
                         ]));
 
