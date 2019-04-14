@@ -11,7 +11,12 @@ use Phalcon\Exception;
  */
 class CustomException extends Exception
 {
-    public function __construct($code, $msg)
+    /**
+     * CustomException constructor.
+     * @param int $code
+     * @param string $msg
+     */
+    public function __construct(int $code, string $msg)
     {
         parent::__construct($msg, $code);
     }

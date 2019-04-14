@@ -35,10 +35,10 @@ class CustomValidation
      * @param array $rules 校验规则
      * @param array $msg 自定义消息
      * @param array $decryptFields 解密字段
-     * @return mixed
+     * @return array
      * @throws CustomException
      */
-    public static function validate(array $params, array $rules, $msg = [], $decryptFields = ['id'])
+    public static function validate(array $params, array $rules, array $msg = [], array $decryptFields = ['id'])
     {
         $validator = new Validation();
         foreach ($rules as $field => $str) {
@@ -217,7 +217,7 @@ class CustomValidation
         foreach ($decryptFields as $field) {
             if (isset($params[$field]) && strlen($params[$field]) >= 24) {
                 try {
-                    $params[$field] = $validator->crypt->decryptBase64(urldecode($params[$field]));
+                    $params[$field] = $validator->crypt->decryptBase64(str_replace(' ', '+', $params[$field]));
                 } catch (Mismatch $e) {
                     throw new CustomException(Code::SERVER_ERROR, $e->getMessage());
                 }

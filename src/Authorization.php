@@ -13,10 +13,10 @@ class Authorization
 {
     /**
      * 创建token
-     * @param $id
+     * @param int $id
      * @return array
      */
-    public static function createToken($id)
+    public static function createToken(int $id)
     {
         $config = Di::getDefault()->get('config');
         $time = time();
